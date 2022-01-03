@@ -1,0 +1,83 @@
+.terminal-window{
+    text-align: left;
+    background: #30353A;
+    max-width: 600px;
+    height: 360px;
+    border-radius: 0 0 8px 8px;
+    margin: 0 auto 30px auto;
+    position: relative;
+}
+
+.terminal-header{
+    background: #E0E8F0;
+    height: 30px;
+    border-radius: 8px 8px 0 0;
+    padding-left: 10px;
+}
+
+.terminal-header .name-terminal{
+    position: absolute;
+    font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+    font-size: 11pt;
+    margin-top: 6px;
+}
+
+.terminal-header .button {
+    width: 12px;
+    height: 12px;
+    margin: 10px 4px 0 0;
+    float: right;
+    border-radius: 8px;
+}
+
+.terminal-header .button.green {
+    background: #3BB662;
+}
+  
+  .terminal-header .button.yellow {
+    background: #E5C30F;
+}
+  
+  .terminal-header .button.red {
+    background: #E75448;
+}
+
+.terminal-input{
+    color: white;
+    font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+    font-size: 11pt;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    bottom: 0;
+    overflow: auto;
+    line-height: 30px;
+}
+
+.green-text{
+    color: #3BB662;
+}
+
+.typed-cursor::after{
+    content: "_";
+	opacity: 0;
+    -webkit-animation: blink 2s linear infinite;
+	animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+	0% {opacity: 0;}
+	40% {opacity: 0;}
+	50% {opacity: 1;}
+	90% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-webkit-keyframes blink{
+    0% {opacity: 0;}
+    40% {opacity: 0;}
+    50% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}
