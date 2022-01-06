@@ -144,4 +144,5 @@ nav{
 @font-face {
     font-family: Raleway-Bold;
     src: url("../fonts/Raleway-Bold.ttf");
+    font-display: swap;
 }
