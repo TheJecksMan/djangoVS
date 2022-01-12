@@ -35,12 +35,12 @@ body {
   font-family: Raleway-Bold;
   font-size: 15px;
   color: white;
-  cursor: pointer;
+  cursor: default;
 }
-
 /* nav */
 .page {
   display: flex;
+  max-width: 1096px;
 }
 
 .nav {
@@ -56,10 +56,16 @@ body {
   background-color: white;
   box-shadow: inset 0 -1px 0 0 #d5dddf;
 }
+
+.sidebar-layout {
+  flex: 0;
+}
 .sidebar {
   width: 300px;
   margin: 10px 15px 0px 0px;
+  flex: 1;
 }
+
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -68,6 +74,7 @@ body {
   background-color: white;
   box-shadow: inset 0 -1px 0 0 #d5dddf;
 }
+
 .sidebar-body {
   display: flex;
   align-items: center;
@@ -75,10 +82,11 @@ body {
   background-color: white;
   box-shadow: inset 0 -1px 0 0 #d5dddf;
 }
+
 .sidebar-text {
   font-family: Raleway-Bold;
   font-size: 15px;
-  color: #303b44;
+  color: #6f7577;
 }
 
 @media (max-width: 720px) {
@@ -91,11 +99,53 @@ body {
   padding: 15px;
   font-family: Raleway-Bold;
   font-size: 18px;
-  color: #303b44;
+  color: #6f7577;
   cursor: pointer;
 }
 .nav-text:hover {
   text-decoration: underline;
+}
+/* content */
+.content {
+  flex: 0;
+  background-color: white;
+  margin: 10px 15px 0px 15px;
+  overflow-wrap: break-word;
+  padding: 10px;
+}
+.learn-more {
+  background-color: initial;
+  border: 1px solid #6f7577;
+  border-radius: 3px;
+  color: #6f7577;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8125rem;
+  height: 36px;
+  line-height: 2.25rem;
+  margin-top: 18px;
+  padding: 0 13px;
+  text-decoration: none;
+}
+
+.name-publish {
+  font-family: Fira Sans, sans-serif;
+  font-size: 1.5rem;
+  margin: 10px 0px 5px 0px;
+}
+
+.anons-publish {
+  font-family: Fira Sans, sans-serif;
+  margin-top: 5px;
+}
+
+.tag-publish {
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.date-publish {
+  color: #777;
 }
 
 /* adatptive */
@@ -104,6 +154,7 @@ body {
     display: none;
   }
 }
+
 /*Font*/
 @font-face {
   font-family: Raleway-Bold;
