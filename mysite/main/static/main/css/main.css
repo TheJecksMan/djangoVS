@@ -37,7 +37,18 @@ body {
   color: white;
   cursor: default;
 }
-/* nav */
+/* page */
+.layout-page-width {
+  margin: 0 auto;
+  min-width: 320px;
+}
+@media (min-width: 1024px) {
+  .layout-page-width {
+    padding: 0 24px;
+    max-width: 1096px;
+  }
+}
+
 .page {
   display: flex;
   max-width: 1096px;
