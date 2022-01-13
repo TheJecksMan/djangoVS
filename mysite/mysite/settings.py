@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
- 'default': {
+    'default': {
         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # 'NAME': 'django',
         # 'USER': 'postgres',
@@ -87,7 +87,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
@@ -114,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -127,7 +126,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIR = [
     BASE_DIR / "static",
-    #'var/www/static',
+    # 'var/www/static',
 ]
 
 # Default primary key field type

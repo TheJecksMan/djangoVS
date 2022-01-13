@@ -3,7 +3,9 @@ body {
   padding: 0;
   background-color: #f0f0f0;
 }
-
+a {
+  text-decoration: none;
+}
 /* header */
 .header {
   align-items: center;
@@ -13,12 +15,10 @@ body {
   margin: 0 auto;
   background-color: #303b44;
 }
-
 .header-container {
   display: flex;
   align-items: center;
 }
-
 .header-text {
   border-left: 1px solid;
   margin-left: 8px;
@@ -29,7 +29,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
 .header-nav-text {
   margin: 10px;
   font-family: Raleway-Bold;
@@ -64,7 +63,6 @@ body {
   width: 22px;
   height: 22px;
 }
-
 .menu-icon-ref {
   margin-left: 15px;
   margin-right: 15px;
@@ -90,16 +88,13 @@ body {
     max-width: 1096px;
   }
 }
-
 .page {
   display: flex;
   max-width: 1096px;
 }
-
 .nav {
   width: 100%;
 }
-
 .nav-header {
   display: flex;
   align-items: center;
@@ -109,7 +104,6 @@ body {
   background-color: white;
   box-shadow: inset 0 -1px 0 0 #d5dddf;
 }
-
 .sidebar-layout {
   flex: 0;
 }
@@ -118,7 +112,6 @@ body {
   margin: 10px 15px 0px 0px;
   flex: 1;
 }
-
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -127,7 +120,6 @@ body {
   background-color: white;
   box-shadow: inset 0 -1px 0 0 #d5dddf;
 }
-
 .sidebar-body {
   display: flex;
   align-items: center;
@@ -135,19 +127,16 @@ body {
   background-color: white;
   box-shadow: inset 0 -1px 0 0 #d5dddf;
 }
-
 .sidebar-text {
   font-family: Raleway-Bold;
   font-size: 15px;
   color: #6f7577;
 }
-
 @media (max-width: 720px) {
   .sidebar {
     display: none;
   }
 }
-
 .nav-text {
   padding: 15px;
   font-family: Raleway-Bold;
@@ -180,34 +169,28 @@ body {
   padding: 0 13px;
   text-decoration: none;
 }
-
 .name-publish {
   font-family: Fira Sans, sans-serif;
   font-size: 1.5rem;
   margin: 10px 0px 5px 0px;
 }
-
 .anons-publish {
   font-family: Fira Sans, sans-serif;
   margin-top: 5px;
 }
-
 .tag-publish {
   color: #777;
   margin-bottom: 5px;
 }
-
 .date-publish {
   color: #777;
 }
-
 /* adatptive */
 @media (max-width: 513px) {
   .header-nav-text {
     display: none;
   }
 }
-
 /*Font*/
 @font-face {
   font-family: Raleway-Bold;
