@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #f4f4f4;
+}
+a {
+  text-decoration: none;
+}
+.layout {
+  height: 100%;
+  width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+.layout-header {
+  width: 100%;
+  height: 68px;
+  background: #fff;
+  border-bottom: 1px solid #d5dddf;
+  margin-bottom: 24px;
+}
+.layout_register {
+  margin: 0 auto;
+  max-width: 460px;
+}
+.layout-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.layout_register_inner {
+  margin-top: 80px;
+  max-width: 460px;
+}
+.form_register {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 15px;
+}
+@media only screen and (max-width: 1024px) {
+  .form_register {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+.form_reminder .form_register {
+  margin-top: 16px;
+  padding: 15px 0;
+  text-align: center;
+}
+.form_field {
+  margin-top: 31px;
+}
+.form_field_label {
+  line-height: 16px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: inline-block;
+  width: 100%;
+  vertical-align: baseline;
+  font-family: Raleway-Bold;
+}
+.form_button {
+  margin-top: 28px;
+}
+.button_register {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  border: 0;
+  box-shadow: none;
+  line-height: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Raleway-Bold;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 48px;
+}
+.button_register:hover {
+  background-color: #558cb7;
+  color: white;
+  cursor: pointer;
+}
+.form_input {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  padding: 0 14px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+}
+
+.header_text {
+  border-left: 1px solid;
+  margin-left: 8px;
+  margin-right: 10px;
+  padding-left: 4px;
+  font-family: Raleway-Bold;
+  font-size: 20px;
+  color: #303b44;
+  cursor: default;
+}
+.register_text {
+  font-family: Raleway-Bold;
+  font-size: 23px;
+  color: #303b44;
+  cursor: default;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 14px;
+  font-family: Raleway-Bold;
+  margin-bottom: 10px;
+}
+.text_login {
+  color: #558cb7;
+}
+.reminder_label {
+  margin-top: 10px;
+}
+
+/*Font*/
+@font-face {
+  font-family: Raleway-Bold;
+  src: url("/static/main/fonts/Raleway-Bold.ttf");
+  font-display: swap;
+}
