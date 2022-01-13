@@ -1,10 +1,8 @@
 from django.db import models
 from django.shortcuts import render, redirect
-from django.views.generic.base import TemplateResponseMixin
 from django.views.generic.detail import DetailView
 from .models import Articles
 from .forms import ArticlesForm
-from django.views.generic import DeleteView
 
 
 def news(request):
