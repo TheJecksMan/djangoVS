@@ -67,10 +67,22 @@ a {
   margin-left: 15px;
   margin-right: 15px;
 }
-.menu-text {
-  font-family: Fira Sans, sans-serif;
+.menu_text {
+  font-family: Raleway-Bold;
+  font-size: 16px;
+  color: #303b44;
+  margin: 0 10px;
 }
 
+@media (max-width: 460px) {
+  .menu_text {
+    font-size: 13px;
+  }
+  .menu-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
 .other-menu-content {
   margin-left: auto;
   align-items: center;

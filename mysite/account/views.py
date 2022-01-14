@@ -1,11 +1,19 @@
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
-from .forms import LoginIn
+from .forms import LoginIn, SingUp
+
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 
 
-def register(request):
-    return render(request, 'account/register.html')
+def account_logout(request):
+    logout(request)
+    # Redirect to a success page.
+
+
+def sing_up(request):
+    form = SingUp()
+    return render(request, 'account/register.html', {'form': form})
 
 
 def reminder(request):

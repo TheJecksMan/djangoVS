@@ -7,6 +7,7 @@ body {
 a {
   text-decoration: none;
 }
+/* layout */
 .layout {
   height: 100%;
   width: 100%;
@@ -69,7 +70,7 @@ a {
   vertical-align: baseline;
   font-family: Raleway-Bold;
 }
-.form_button {
+.form_margin {
   margin-top: 28px;
 }
 .button_register {
