@@ -20,18 +20,24 @@
             <div class="layout_register_inner">
                 <div class="form_register">
                     <span class="register_text">Вход</span>
-                    <form action="#" method="post">
-
+                    <form method="post">
+                        {% csrf_token %}
                         <div class="form_field">
                             <label for="login_field" class="form_field_label">Логин</label>
-                            <input type="login" name="login" class="form_input">
+                            {{form.username}}
+                            <!-- <input type="login" name="login" class="form_input"> -->
                         </div>
 
                         <div class="form_field">
                             <label for="password_field" class="form_field_label">Пароль</label>
-                            <input type="password" name="password" class="form_input">
+                            {{form.password}}
+                            <!-- <input type="password" name="password" class="form_input"> -->
                         </div>
-
+                        {% if error_text %}
+                        <div class="form_button">
+                            <span class="form_field_label">{{ error_text }}</span>
+                        </div>
+                        {% endif %}
                         <div class="form_button">
                             <button class="button_register">
                                 Войти
