@@ -45,6 +45,11 @@
                             {{ form.password2}}
                             <!-- <input type="password" name="password_repeat" class="form_input" required> -->
                         </div>
+                        {% if error_text %}
+                        <div class="form_margin">
+                            <span class="form_field_label">{{ error_text }}</span>
+                        </div>
+                        {% endif %}
                         <div class="form_margin">
                             <button class="button_register">
                                 Зарегистрироваться
