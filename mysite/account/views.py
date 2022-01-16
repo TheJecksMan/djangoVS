@@ -1,10 +1,14 @@
-import random
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import LoginIn, SingUp
+from .forms import LoginIn, SingUp, ActivateEmail
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+
+
+def activate_account(request):
+    form = ActivateEmail()
+    return render(request, 'account/activate.html', {'form': form})
 
 
 def account_logout(request):
@@ -14,11 +18,6 @@ def account_logout(request):
 
 def reminder(request):
     return render(request, 'account/reminder.html')
-
-
-def generation_code():
-    random.seed()
-    return str(random.randint(10000, 99999))
 
 
 def sing_up(request):  # registartion account
@@ -43,6 +42,8 @@ def sing_up(request):  # registartion account
                     if not User.objects.filter(username=username).exists():
                         user = User.objects.create_user(
                             username, email, password1)
+
+                        user.is_active = False
                         user.save()  # create user
                         return HttpResponse('Регистрация прошла успешно!')
                     else:

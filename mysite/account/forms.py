@@ -22,3 +22,8 @@ class LoginIn(forms.Form):
 
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form_input'}))
+
+
+class ActivateEmail(forms.Form):
+    code = forms.CharField(widget=forms.TextInput(
+        attrs={'class': 'form_input'}))
