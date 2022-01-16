@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import LoginIn, SingUp, ActivateEmail
 
@@ -25,15 +25,15 @@ def sing_up(request):  # registartion account
     if request.method == 'POST':
         form = SingUp(request.POST)
         if form.is_valid():
-            email = form.cleaned_data.get('email')  # email
-            username = form.cleaned_data.get('username')  # login
-            password1 = form.cleaned_data.get('password1')  # password
-            password2 = form.cleaned_data.get('passwird2')  # repeat password
+            # email = form.cleaned_data.get('email')  # email
+            # username = form.cleaned_data.get('username')  # login
+            # password1 = form.cleaned_data.get('password1')  # password
+            # password2 = form.cleaned_data.get('passwird2')  # repeat password
 
-            # email = request.POST['email']  # email
-            # username = request.POST['username']  # login
-            # password1 = request.POST['password1']  # password
-            # password2 = request.POST['password2']  # repeat password
+            email = request.POST['email']  # email
+            username = request.POST['username']  # login
+            password1 = request.POST['password1']  # password
+            password2 = request.POST['password2']  # repeat password
 
             if password1 == password2:  # valid password
                 # check valid email
@@ -45,7 +45,8 @@ def sing_up(request):  # registartion account
 
                         user.is_active = False
                         user.save()  # create user
-                        return HttpResponse('Регистрация прошла успешно!')
+                        # return HttpResponse('Регистрация прошла успешно!')
+                        return redirect('http://localhost:8000/activate/', permanent=True)
                     else:
                         error_text = 'Пользователь с таким именем уже существует'
                 else:
