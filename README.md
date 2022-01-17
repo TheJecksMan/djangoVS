@@ -3,3 +3,8 @@
 
 
 Первый проект для изучения framework'a Django
+
+#### Установка зависимостей через командую строку
+```
+pip install -r requirements.txt 
+```
