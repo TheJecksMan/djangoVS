@@ -1,3 +1,4 @@
+{% load static %}
 {% block content %}
 <header class="header">
     <div class="header-container">
@@ -19,13 +20,13 @@
             </div>
             <div class="other-menu-content">
                 <a class="menu-icon-ref" href="#">
-                    <img class="menu-icon" src="/static/main/img/icon/search.svg" alt="Поиск">
+                    <img class="menu-icon" src="{% static 'main/img/icon/search.svg' %}" alt="Поиск">
                 </a>
                 <a class="menu-icon-ref" href="#">
-                    <img class="menu-icon" src="/static/main/img/icon/pencil.svg" alt="Создать новость">
+                    <img class="menu-icon" src="{% static 'main/img/icon/pencil.svg' %}" alt="Создать новость">
                 </a>
                 <a class="menu-icon-ref" href="login">
-                    <img class="menu-icon" src="/static/main/img/icon/person.svg" alt="Аккаунт">
+                    <img class="menu-icon" src="{% static 'main/img/icon/person.svg' %}" alt="Аккаунт">
                 </a>
             </div>
         </div>
