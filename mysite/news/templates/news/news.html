@@ -5,43 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/static/news/css/news.css">
-    <title>Бухта Кодера - Новости</title>
+    <link rel="stylesheet" type="text/css" href="/static/header.css">
     <link rel="shortcut icon" type="image/png" href="/static/main/img/favicon.ico">
+    <title>Бухта Кодера - Новости</title>
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-container">
-            <span class="header-text">Бухта Кодера</span>
-            <span class="header-nav-text">Блог начинающиего back-end разработчика</span>
-        </div>
-    </header>
-
-    <div class="menu">
-        <div class="layout-page-width">
-            <div class="layout-menu">
-                <div class="main-menu-content">
-                    <div class="main-menu-selections">
-                        <nav class="main-menu-content-selections">
-                            <span class="menu-text">Топ читаемых</span>
-                        </nav>
-                    </div>
-                </div>
-                <div class="other-menu-content">
-                    <a class="menu-icon-ref" href="#">
-                        <img class="menu-icon" src="/static/main/img/icon/search.svg" alt="Поиск">
-                    </a>
-                    <a class="menu-icon-ref" href="#">
-                        <img class="menu-icon" src="/static/main/img/icon/pencil.svg" alt="Создать новость">
-                    </a>
-                    <a class="menu-icon-ref" href="#">
-                        <img class="menu-icon" src="/static/main/img/icon/person.svg" alt="Аккаунт">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {% include 'main/header.html' %}
 
     <div class="layout-page">
         <div class="layout-page-width">
@@ -52,11 +22,13 @@
                         <a href="/news"><span class="nav-text">Новости</span></a>
                         <a href="/"><span class="nav-text">Статьи</span></a>
                     </div>
+                    {% for el in news %}
                     <div class="content">
+
                         <span class="date-publish">Сегодня 18:47</span>
                         <div>
                             <h1 class="name-publish">
-                                <span>Название</span>
+                                <span class="text-news">{{el.title }}</span>
                             </h1>
                         </div>
                         <div class="tag-publish">
@@ -65,14 +37,15 @@
 
                         <div class="inform-publish">
                             <div>
-                                <img src="#" alt="Изображение">
+                                <img src="#" alt="">
                             </div>
                             <div>
-                                <span class="anons-publish">Анонс</span>
+                                <span class="anons-publish">{{el.anons }}</span>
                             </div>
                             <a class="learn-more" href="#">Читать далее</a>
                         </div>
                     </div>
+                    {% endfor%}
 
                 </div>
                 <div class="sidebar-layout">
