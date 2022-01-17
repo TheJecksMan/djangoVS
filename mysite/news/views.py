@@ -3,10 +3,16 @@ from django.shortcuts import render, redirect
 from django.views.generic.detail import DetailView
 from .models import Articles
 from .forms import ArticlesForm
+from django.core.paginator import Paginator
 
 
 def news(request):
     news = Articles.objects.order_by('date').reverse
+    # news_paginator = Paginator(news, 5)
+    # context = {
+    #     'count': news_paginator.count,
+    #     'news': news
+    # }
     return render(request, 'news/news.html', {'news': news})
 
 

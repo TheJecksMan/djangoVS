@@ -1,3 +1,4 @@
+from django.core import mail
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import LoginIn, SingUp, ActivateEmail
@@ -73,7 +74,8 @@ def sing_in(request):  # form authentication and loginin account
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return HttpResponse('Аутентификация выполнена!')
+                # return HttpResponse('Аутентификация выполнена!')
+                return redirect('http://localhost:8000/', permanent=True)
 
             else:
                 error_text = 'Некорректный логин или пароль'
