@@ -38,7 +38,6 @@ server {
         server_name <имя> www.<имя>;
 
         location /{
-                try_files $uri $uri/ =404;
                 proxy_pass http://127.0.0.1:8001;
                 proxy_set_header X-Forwarded-Host $server_name;
                 proxy_set_header X-Real-IP $remote_addr;
