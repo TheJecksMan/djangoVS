@@ -9,12 +9,13 @@
 pip install -r requirements.txt 
 ```
 #### Настройка nginx для deploy
+Настройка и проксирования gunicorn для проекта
 ```
 server {
         listen 80;
         listen [::]:80;
 
-        root /var/www/getlocationwifi_ngix;
+        root /var/www/<custom name>
 
         index index.html index.htm
 
