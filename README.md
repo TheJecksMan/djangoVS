@@ -37,15 +37,21 @@ server {
 ```
 
 ### Скрипт sh для запуска gunicorn
-Основной скрипт для запуска проекта без лишних команд
+Основной скрипт для запуска проекта без лишних команд:
 ```bash
 #!/bin/bash
 source <path to venv>/bin/activate
 exec gunicorn -c "<path to project>/mysite/mysite/gunicorn_config.py" <custom name>.wsgi
 ```
 
+Перед запуском требуется выдать права на выполнение:
+```
+chmod +x <имя скрипта>.sh
+```
+
 ### gunicorn_config.py
-Конфигурация gunicorn для запуска проекта
+Конфигурация gunicorn для запуска проекта:
+
 ```python
 command = '<path to venv>/bin/gunicorn'
 pythonpath = '<path to project>/mysite/mysite'
