@@ -124,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-#STATIC_ROOT только при deploy на сервер
+# STATIC_ROOT только при deploy на сервер
 #STATIC_ROOT = '/var/www/static/'
 STATIC_URL = 'static/'
 STATICFILES_DIR = [
@@ -135,3 +135,8 @@ STATICFILES_DIR = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Account
+LOGIN_URL = '/login'
+LOGOUT_URL = '/login'

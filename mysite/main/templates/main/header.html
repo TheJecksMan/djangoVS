@@ -25,9 +25,15 @@
                 <a class="menu-icon-ref" href="#">
                     <img class="menu-icon" src="{% static 'main/img/icon/pencil.svg' %}" alt="Создать новость">
                 </a>
+                {% if not request.user.is_authenticated %}
                 <a class="menu-icon-ref" href="{% url 'login'%}">
                     <img class="menu-icon" src="{% static 'main/img/icon/person.svg' %}" alt="Аккаунт">
                 </a>
+                {% else %}
+                <a href="{% url 'profile' %}">
+                    @{{ request.user.username }}
+                </a>
+                {% endif %}
             </div>
         </div>
     </div>

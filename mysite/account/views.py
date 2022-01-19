@@ -1,3 +1,4 @@
+from turtle import st
 from django.core import mail
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
@@ -5,6 +6,16 @@ from .forms import LoginIn, SingUp, ActivateEmail
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
+def profile_account(request):
+    username = 'anonymous'
+    if request.user.is_authenticated:
+        username = request.user.username
+
+    return render(request, 'account/profile.html', {'username': username})
 
 
 def activate_account(request):
@@ -14,7 +25,6 @@ def activate_account(request):
 
 def account_logout(request):
     logout(request)
-    # Redirect to a success page.
 
 
 def reminder(request):
@@ -26,10 +36,6 @@ def sing_up(request):  # registartion account
     if request.method == 'POST':
         form = SingUp(request.POST)
         if form.is_valid():
-            # email = form.cleaned_data.get('email')  # email
-            # username = form.cleaned_data.get('username')  # login
-            # password1 = form.cleaned_data.get('password1')  # password
-            # password2 = form.cleaned_data.get('passwird2')  # repeat password
 
             email = request.POST['email']  # email
             username = request.POST['username']  # login
@@ -73,9 +79,13 @@ def sing_in(request):  # form authentication and loginin account
 
             user = authenticate(request, username=username, password=password)
             if user is not None:
-                login(request, user)
-                # return HttpResponse('Аутентификация выполнена!')
-                return redirect('http://localhost:8000/', permanent=True)
+                if request.GET.get('next'):  # redirect if the user is not logged in
+                    url = request.GET.get('next')
+                    login(request, user)
+                    return redirect(f'http://localhost:8000{url}', permanent=True)
+                else:
+                    login(request, user)
+                    return redirect('http://localhost:8000/', permanent=True)
 
             else:
                 error_text = 'Некорректный логин или пароль'

@@ -1,12 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="/static/main/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/static/account/css/register.css">
-    <title>Бухта Кодера - Регистрация</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/img/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/account.css' %}">
+    <title>Бухта Кодера - Вход</title>
 </head>
 
 <body>
@@ -19,31 +21,19 @@
         <div class="layout_register">
             <div class="layout_register_inner">
                 <div class="form_register">
-                    <span class="register_text">Регистрация</span>
+                    <span class="register_text">Вход</span>
                     <form method="post">
                         {% csrf_token %}
                         <div class="form_field">
-                            <label for="email_field" class="form_field_label">E-mail</label>
-                            {{ form.email}}
-                            <!-- <input type="email" name="email" class="form_input" required> -->
-                        </div>
-
-                        <div class="form_field">
                             <label for="login_field" class="form_field_label">Логин</label>
-                            {{ form.username}}
-                            <!-- <input type="login" name="login" class="form_input" required> -->
+                            {{form.username}}
+                            <!-- <input type="login" name="login" class="form_input"> -->
                         </div>
 
                         <div class="form_field">
                             <label for="password_field" class="form_field_label">Пароль</label>
-                            {{ form.password1}}
-                            <!-- <input type="password" name="password" class="form_input" required> -->
-                        </div>
-
-                        <div class="form_field">
-                            <label for="password_repeat_field" class="form_field_label">Пароль ещё раз</label>
-                            {{ form.password2}}
-                            <!-- <input type="password" name="password_repeat" class="form_input" required> -->
+                            {{form.password}}
+                            <!-- <input type="password" name="password" class="form_input"> -->
                         </div>
                         {% if error_text %}
                         <div class="form_margin">
@@ -52,15 +42,19 @@
                         {% endif %}
                         <div class="form_margin">
                             <button class="button_register">
-                                Зарегистрироваться
+                                Войти
                             </button>
                         </div>
                     </form>
+
+                    <div class="reminder_label">
+                        <a href="reminder"><span class="text_login wrap">Забыли пароль?</span></a>
+                    </div>
                 </div>
 
                 <div class="layout_register_inner form_register login">
-                    Уже зарегистрированы?
-                    <a href="login"><span class="text_login">Войдите</span></a>
+                    Не зарегистрированы?
+                    <a href="register"><span class="text_login">Зарегистрируйтесь</span></a>
                 </div>
             </div>
         </div>
