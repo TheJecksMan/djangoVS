@@ -8,6 +8,22 @@
 ```
 pip install -r requirements.txt 
 ```
+## При deploy на сервер в [setting.py](https://github.com/TheJecksMan/djangoVS/blob/master/mysite/mysite/settings.py)
+
+**1. Установить путь к статический файлам на сервере:**
+```
+STATIC_ROOT = '/var/www/static/'
+```
+
+**2. Настроить разрешённые хосты:**
+```
+ALLOWED_HOSTS = ['192.168.1.103', '127.0.0.1'] (Как пример)
+```
+**3. Отключить режим отладки:**
+```
+DEBUG = false
+```
+
 #### Настройка nginx для deploy
 Настройка и проксирования gunicorn для проекта
 ```
@@ -25,11 +41,13 @@ server {
                 proxy_pass http://127.0.0.1:8001;
                 proxy_set_header X-Forwarded-Host $server_name;
                 proxy_set_header X-Real-IP $remote_addr;
-                add_header P3P 'CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"';
+                #add_header P3P 'CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"';
                 add_header Access-Control-Allow-Origin *;
+                add_header X-XSS-Protection "1; mode=block";
         }
 
         location /static/{
+                add_header Cache-Control "max-age=31536000";
                 alias <path to static files>;
         }
 
