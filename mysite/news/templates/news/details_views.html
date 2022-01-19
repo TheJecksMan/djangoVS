@@ -1,18 +1,54 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/css/news.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/css/post.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/img/favicon.ico' %}">
     <title>Document</title>
 </head>
 
 <body>
-    <div class='news_block'>
-        <h1>{{ article.title}}</h1>
-        <p>{{ article.anons }}</p>
-        <p>{{ article.full_text }}</p>
+    {% include 'main/header.html' %}
+
+
+    <div class="layout-page">
+        <div class="layout-page-width">
+            <div class="page">
+                <div class="nav">
+                    <div class="nav-header">
+                        <a href="/"><span class="nav-text">Главная</span></a>
+                        <a href="/news"><span class="nav-text">Новости</span></a>
+                        <a href="/"><span class="nav-text">Статьи</span></a>
+                    </div>
+                    <div class="content">
+                        <div class='news_block'>
+                            <h1>{{ article.title}}</h1>
+                            <div class="post_text">{{ article.anons }}</div>
+                            <div class="post_text">{{ article.full_text }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-layout">
+                    <div class="sidebar">
+                        <div class="sidebar-header">
+                            <span class="sidebar-text">Популярные теги</span>
+                        </div>
+                        <div class="sidebar-body">
+                            #Test1<br>
+                            #Test2<br>
+                            #Test3<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>

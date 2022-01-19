@@ -118,6 +118,16 @@
     display: none;
   }
 }
+
+/* paginator */
+.paginator {
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  height: 49px;
+  justify-content: space-between;
+  margin: 10px 15px 0px 15px;
+}
 /*Font*/
 @font-face {
   font-family: Raleway-Bold;
