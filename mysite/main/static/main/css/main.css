@@ -25,39 +25,6 @@
   background-color: white;
   box-shadow: inset 0 -1px 0 0 #d5dddf;
 }
-.sidebar-layout {
-  flex: 0;
-}
-.sidebar {
-  width: 300px;
-  margin: 10px 15px 0px 0px;
-  flex: 1;
-}
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  background-color: white;
-  box-shadow: inset 0 -1px 0 0 #d5dddf;
-}
-.sidebar-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  box-shadow: inset 0 -1px 0 0 #d5dddf;
-}
-.sidebar-text {
-  font-family: Raleway-Bold;
-  font-size: 15px;
-  color: #6f7577;
-}
-@media (max-width: 720px) {
-  .sidebar {
-    display: none;
-  }
-}
 .nav-text {
   padding: 15px;
   font-family: Raleway-Bold;

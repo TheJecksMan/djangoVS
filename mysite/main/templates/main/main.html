@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'side-bar.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'main/img/favicon.ico' %}">
     <title>Бухта Кодера - Новости</title>
 </head>
@@ -27,18 +28,7 @@
                     </div> -->
 
                 </div>
-                <div class="sidebar-layout">
-                    <div class="sidebar">
-                        <div class="sidebar-header">
-                            <span class="sidebar-text">Популярные теги</span>
-                        </div>
-                        <div class="sidebar-body">
-                            #Test1<br>
-                            #Test2<br>
-                            #Test3<br>
-                        </div>
-                    </div>
-                </div>
+                {% include 'main/sidebar.html' %}
             </div>
         </div>
     </div>
