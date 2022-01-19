@@ -122,11 +122,18 @@
 /* paginator */
 .paginator {
   background-color: #fff;
-  box-sizing: border-box;
   display: flex;
   height: 49px;
+  align-items: center;
   justify-content: space-between;
   margin: 10px 15px 0px 15px;
+}
+.paginator_ref {
+  text-decoration: none;
+  color: #000;
+}
+.paginator-text {
+  padding: 10px;
 }
 /*Font*/
 @font-face {

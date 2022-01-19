@@ -50,14 +50,18 @@
                     {% endfor%}
                     <div class="paginator">
                         {% if page.has_previous %}
-                        <a href="?page={{ page.previous_page_number }}">Предыдущая</a>
+                        <a class="paginator_ref" href="?page={{ page.previous_page_number }}">
+                            <span class="paginator-text">Предыдущая</span>
+                        </a>
                         {% endif %}
 
                         <div class="paginator_pages">
 
                         </div>
                         {% if page.has_next %}
-                        <a href="{% url 'news' %}?page={{ page.next_page_number }}">Следующая</a>
+                        <a class="paginator_ref" href="{% url 'news' %}?page={{ page.next_page_number }}">
+                            <span class="paginator-text">Следующая</span>
+                        </a>
                         {% endif %}
                     </div>
                 </div>

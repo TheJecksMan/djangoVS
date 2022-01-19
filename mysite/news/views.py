@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 
 
 def news(request):
-    base_news = Articles.objects.all()
+    base_news = Articles.objects.order_by('date').reverse()
     p = Paginator(base_news, 5)
     page_number = request.GET.get('page')
     page = p.get_page(page_number)
