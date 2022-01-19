@@ -23,10 +23,6 @@ def activate_account(request):
     return render(request, 'account/activate.html', {'form': form})
 
 
-def account_logout(request):
-    logout(request)
-
-
 def reminder(request):
     return render(request, 'account/reminder.html')
 
