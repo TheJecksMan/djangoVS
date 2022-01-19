@@ -24,7 +24,7 @@
                         <a href="/news"><span class="nav-text">Новости</span></a>
                         <a href="/"><span class="nav-text">Статьи</span></a>
                     </div>
-                    {% for el in news %}
+                    {% for el in page.object_list %}
                     <div class="content">
 
                         <span class="date-publish">Сегодня 18:47</span>
@@ -44,11 +44,22 @@
                             <div>
                                 <span class="anons-publish">{{el.anons }}</span>
                             </div>
-                            <a class="learn-more" href="#">Читать далее</a>
+                            <a class="learn-more" href="{% url 'news-detail'  el.id %}">Читать далее</a>
                         </div>
                     </div>
                     {% endfor%}
+                    <div class="paginator">
+                        {% if page.has_previous %}
+                        <a href="?page={{ page.previous_page_number }}">Предыдущая</a>
+                        {% endif %}
 
+                        <div class="paginator_pages">
+
+                        </div>
+                        {% if page.has_next %}
+                        <a href="{% url 'news' %}?page={{ page.next_page_number }}">Следующая</a>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="sidebar-layout">
                     <div class="sidebar">

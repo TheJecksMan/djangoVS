@@ -7,13 +7,11 @@ from django.core.paginator import Paginator
 
 
 def news(request):
-    news = Articles.objects.order_by('date').reverse
-    # news_paginator = Paginator(news, 5)
-    # context = {
-    #     'count': news_paginator.count,
-    #     'news': news
-    # }
-    return render(request, 'news/news.html', {'news': news})
+    base_news = Articles.objects.all()
+    p = Paginator(base_news, 5)
+    page_number = request.GET.get('page')
+    page = p.get_page(page_number)
+    return render(request, 'news/news.html', {'page': page})
 
 
 class NewsDetailViews(DetailView):
