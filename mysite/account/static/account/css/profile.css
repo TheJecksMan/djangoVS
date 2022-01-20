@@ -56,7 +56,7 @@ a {
   border: 1px solid #d3dbdd;
   background: #fff;
   height: 36px;
-  margin: 0 0 0 24px;
+  margin: 0 5px 0 24px;
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -70,6 +70,122 @@ a {
   justify-content: center;
   text-align: center;
   cursor: pointer;
+}
+
+/* main container */
+.layout_setting {
+  margin-top: 12px;
+  padding: 0 0 60px;
+}
+.layout_wrap {
+  display: flex;
+  margin: 0 auto;
+  min-width: 320px;
+}
+@media (min-width: 1024px) {
+  .layout_wrap {
+    padding: 0 24px;
+    max-width: 1096px;
+  }
+}
+.layout_container {
+  flex: 1;
+  min-width: 100px;
+}
+.layout_top {
+  background-color: #fff;
+  margin-bottom: 12px;
+}
+.layout_top_info {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+.layout_top_text {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  margin: 0;
+  text-decoration: none;
+}
+.layout_top_tabs {
+  align-items: center;
+  background-color: #fff;
+  box-shadow: inset 0 -1px 0 0 #d5dddf;
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+.top_tabs {
+  font-size: 16px;
+  color: #6f7577;
+  display: inline-block;
+  margin: 10px 0px 10px 20px;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+/* user setting form */
+.user_setting_form {
+  background: #fff;
+}
+.user_setting {
+  padding: 16px 20px;
+}
+.img_avatar {
+  width: 60px;
+  height: 60px;
+}
+.base_label {
+  color: #444;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  line-height: 16px;
+}
+
+.base_input {
+  margin-top: 24px;
+}
+
+.base_description {
+  color: #777;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 9px 0;
+}
+.button {
+  border: 1px solid #c9c9c9;
+  background-color: #f4f4f4;
+  color: #464646;
+  cursor: pointer;
+  padding: 0 12px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  font-size: 12px;
+  display: inline-block;
+}
+.base-input__input {
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #d5dddf;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  outline: none;
+}
+input {
+  display: none;
 }
 /*Font*/
 @font-face {

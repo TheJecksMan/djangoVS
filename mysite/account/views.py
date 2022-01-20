@@ -1,7 +1,4 @@
-from turtle import st
-from django.core import mail
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
 from .forms import LoginIn, SingUp, ActivateEmail
 
 from django.contrib.auth import authenticate, login, logout
@@ -48,7 +45,6 @@ def sing_up(request):  # registartion account
 
                         user.is_active = False
                         user.save()  # create user
-                        # return HttpResponse('Регистрация прошла успешно!')
                         return redirect('http://localhost:8000/activate/', permanent=True)
                     else:
                         error_text = 'Пользователь с таким именем уже существует'

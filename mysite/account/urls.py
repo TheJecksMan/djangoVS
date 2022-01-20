@@ -8,6 +8,6 @@ urlpatterns = [
     path('login', views.sing_in, name='login'),
     path('reminder', views.reminder, name='reminders'),
     path('activate/', views.activate_account, name='activate'),
-    path('profile', views.profile_account, name='profile'),
+    path('setting/profile', views.profile_account, name='profile'),
     path('logout', auth_views.logout_then_login, name='logout'),
 ]
