@@ -8,11 +8,12 @@ from django.contrib.auth.decorators import login_required
 
 @login_required  # redirect form login
 def profile_account(request):
-    username = 'anonymous'
-    if request.user.is_authenticated:
-        username = request.user.username
+    return render(request, 'account/profile.html')
 
-    return render(request, 'account/profile.html', {'username': username})
+
+@login_required
+def security_account(request):
+    return render(request, 'account/security.html')
 
 
 def activate_account(request):

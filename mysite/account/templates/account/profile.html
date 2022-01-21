@@ -1,13 +1,13 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="{% static 'main/img/favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'account/css/profile.css' %}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/img/favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/profile.css' %}" />
     <title>Бухта кодера - Аккаунт</title>
 </head>
 
@@ -17,7 +17,11 @@
             <div class="layout-header-inner">
                 <span class="header_text">Бухта Кодера Аккаунт</span>
                 <div class="user_info">
-                    <span class="user">@{{username}}</span>
+                    {% if request.user.is_authenticated %}
+                    <span class="user">@{{request.user.username}}</span>
+                    {% else %}
+                    <span class="user">@anonymous</span>
+                    {% endif %}
                     <a href="{% url 'logout' %}">
                         <span class="button_exit">Выход</span>
                     </a>
@@ -25,16 +29,19 @@
             </div>
         </div>
         <div class="layout_setting">
-            <div class="layout_wrap ">
+            <div class="layout_wrap">
                 <div class="layout_container">
-
                     <div class="layout_top">
                         <div class="layout_top_info">
                             <h1 class="layout_top_text">Настройки</h1>
                         </div>
                         <div class="layout_top_tabs">
-                            <span class="top_tabs">Профиль</span>
-                            <span class="top_tabs">Безопасность</span>
+                            <a href="{% url 'profile'%}">
+                                <span class="top_tabs">Профиль</span>
+                            </a>
+                            <a href="{% url 'security'%}">
+                                <span class="top_tabs">Безопасность</span>
+                            </a>
                         </div>
                     </div>
 
@@ -47,18 +54,18 @@
                                         <span>Аватар</span>
                                     </div>
                                     <div>
-                                        <img class="img_avatar" src="{% static 'account/img/default_avatar.png' %}">
+                                        <img class="img_avatar" src="{% static 'account/img/default_avatar.png' %}" />
                                     </div>
                                     <div>
-                                        <p class="base_description ">
-                                            Формат: jpg, gif, png.<br>
-                                            Максимальный размер файла: 1Mb.<br>
-                                            Разрешение: до 96x96px.<br>
+                                        <p class="base_description">
+                                            Формат: jpg, gif, png.<br />
+                                            Максимальный размер файла: 1Mb.<br />
+                                            Разрешение: до 96x96px.<br />
                                         </p>
                                     </div>
                                     <div>
                                         <label class="button">
-                                            <input type="file" accept="image/*">
+                                            <input type="file" accept="image/*" />
                                             <span>Загрузить</span>
                                         </label>
                                     </div>
@@ -68,11 +75,11 @@
                                     <div class="base_input base_label">
                                         <span>Настоящее имя</span>
                                         <div>
-                                            <input class="base_input base-input__input" type="text">
+                                            <input class="base_input base-input__input" type="text" />
                                         </div>
-                                        <p class="base_description ">
-                                            Укажите ваши имя и фамилию, чтобы другие пользователи смогли узнать, как вас
-                                            зовут
+                                        <p class="base_description">
+                                            Укажите ваши имя и фамилию, чтобы другие пользователи
+                                            смогли узнать, как вас зовут
                                         </p>
                                     </div>
                                 </div>
@@ -88,32 +95,11 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div>
-                                    <div class="base_input base_label">
-                                        <span>Дата рождения</span>
-                                        <div>
-                                            <select class="base_input base-input__input">
-                                                <option value="0"></option>
-                                                <option value="1">1</option>
-                                            </select>
-                                            <select class="base_input base-input__input">
-                                                <option value="0"></option>
-                                                <option value="1">1</option>
-                                            </select>
-                                            <select class="base_input base-input__input">
-                                                <option value="0"></option>
-                                                <option value="1">2020</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div>
                                     <div class="base_input base_label">
                                         <span>Расскажите о себе</span>
                                         <div>
-                                            <textarea class="base_input base-input__input"></textarea>
+                                            <textarea class="about base_input base-input__input"></textarea>
                                         </div>
                                     </div>
                                 </div>

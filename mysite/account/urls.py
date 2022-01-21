@@ -9,5 +9,6 @@ urlpatterns = [
     path('reminder', views.reminder, name='reminders'),
     path('activate/', views.activate_account, name='activate'),
     path('setting/profile', views.profile_account, name='profile'),
+    path('setting/security', views.security_account, name='security'),
     path('logout', auth_views.logout_then_login, name='logout'),
 ]

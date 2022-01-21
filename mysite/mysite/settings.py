@@ -131,12 +131,22 @@ STATICFILES_DIR = [
     BASE_DIR / "static",
 ]
 
+
+# Основной url для управления медиафайлами
+MEDIA_URL = '/media/'
+
+# Путь хранения картинок
+MEDIA_ROOT = [
+    BASE_DIR, 'media/',
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# Account
+# redirect, если пользователь не был авторизирован
 LOGIN_URL = '/login'
+# redirect при выходе из аккаунта
 LOGOUT_URL = '/login'
