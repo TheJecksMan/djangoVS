@@ -8,26 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="{% static 'main/img/favicon.ico' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'account/css/profile.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/general_profile.css' %}" />
     <title>Бухта кодера - Аккаунт</title>
 </head>
 
 <body>
     <div class="layout">
-        <div class="layout-header">
-            <div class="layout-header-inner">
-                <span class="header_text">Бухта Кодера Аккаунт</span>
-                <div class="user_info">
-                    {% if request.user.is_authenticated %}
-                    <span class="user">@{{request.user.username}}</span>
-                    {% else %}
-                    <span class="user">@anonymous</span>
-                    {% endif %}
-                    <a href="{% url 'logout' %}">
-                        <span class="button_exit">Выход</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+        {% include 'account/header_profile.html' %}
+
         <div class="layout_setting">
             <div class="layout_wrap">
                 <div class="layout_container">
@@ -102,6 +90,12 @@
                                             <textarea class="about base_input base-input__input"></textarea>
                                         </div>
                                     </div>
+                                </div>
+                                <div>
+                                    <label class="button">
+                                        <input type="submit" />
+                                        <span>Сохранить</span>
+                                    </label>
                                 </div>
                             </form>
                         </div>

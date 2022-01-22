@@ -75,11 +75,8 @@ class ChangeEmail(forms.Form):
 
 
 class ChangePassword(forms.Form):
-    old_password = forms.CharField(
-        max_length=48, widget=forms.PasswordInput(attrs={}))
-
     new_password1 = forms.CharField(
-        max_length=48, widget=forms.PasswordInput(attrs={}))
+        max_length=48, widget=forms.PasswordInput(attrs={'class': 'base_input base-input__input'}))
 
     new_password2 = forms.CharField(
-        max_length=48, widget=forms.PasswordInput(attrs={}))
+        max_length=48, widget=forms.PasswordInput(attrs={'class': 'base_input base-input__input'}))

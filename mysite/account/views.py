@@ -1,5 +1,7 @@
+from hashlib import new
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from .forms import LoginIn, SingUp, ActivateEmail
+from .forms import *
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -13,7 +15,21 @@ def profile_account(request):
 
 @login_required
 def security_account(request):
-    return render(request, 'account/security.html')
+
+    if request.method == 'POST':
+        form = ChangePassword(request.POST)
+        if form.is_valid():
+            username = request.user.username
+            new_password1 = request.POST['new_password1']  # password
+            new_password2 = request.POST['new_password2']  # repeat password
+            if new_password1 == new_password2:
+                user = User.objects.get(username=username)
+                user.set_password(new_password1)
+                user.save()
+    else:
+        form = ChangePassword()
+
+    return render(request, 'account/security.html', {'form': form})
 
 
 def activate_account(request):

@@ -150,3 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/login'
 # redirect при выходе из аккаунта
 LOGOUT_URL = '/login'
+
+
+# SESSION_COOKIE_SECURE = True only https
+CSRF_USE_SESSIONS = True

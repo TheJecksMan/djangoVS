@@ -1,0 +1,18 @@
+{% load static %}
+{% block profile_content %}
+<div class="layout-header">
+    <div class="layout-header-inner">
+        <span class="header_text">Бухта Кодера Аккаунт</span>
+        <div class="user_info">
+            {% if request.user.is_authenticated %}
+            <span class="user">@{{request.user.username}}</span>
+            {% else %}
+            <span class="user">@anonymous</span>
+            {% endif %}
+            <a href="{% url 'logout' %}">
+                <span class="button_exit">Выход</span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
