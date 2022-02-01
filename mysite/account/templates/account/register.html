@@ -13,7 +13,9 @@
     <div class="layout">
         <div class="layout-header">
             <div class="layout-header-inner">
-                <span class="header_text">Бухта Кодера Аккаунт</span>
+                <a href="{% url 'index' %}">
+                    <span class="header_text">Бухта Кодера Аккаунт</span>
+                </a>
             </div>
         </div>
         <div class="layout_register">
@@ -25,25 +27,21 @@
                         <div class="form_field">
                             <label for="email_field" class="form_field_label">E-mail</label>
                             {{ form.email}}
-                            <!-- <input type="email" name="email" class="form_input" required> -->
                         </div>
 
                         <div class="form_field">
                             <label for="login_field" class="form_field_label">Логин</label>
                             {{ form.username}}
-                            <!-- <input type="login" name="login" class="form_input" required> -->
                         </div>
 
                         <div class="form_field">
                             <label for="password_field" class="form_field_label">Пароль</label>
                             {{ form.password1}}
-                            <!-- <input type="password" name="password" class="form_input" required> -->
                         </div>
 
                         <div class="form_field">
                             <label for="password_repeat_field" class="form_field_label">Пароль ещё раз</label>
                             {{ form.password2}}
-                            <!-- <input type="password" name="password_repeat" class="form_input" required> -->
                         </div>
                         {% if error_text %}
                         <div class="form_margin">
@@ -60,7 +58,7 @@
 
                 <div class="layout_register_inner form_register login">
                     Уже зарегистрированы?
-                    <a href="login"><span class="text_login">Войдите</span></a>
+                    <a href="{% url 'login' %}"><span class="text_login">Войдите</span></a>
                 </div>
             </div>
         </div>

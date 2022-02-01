@@ -2,7 +2,10 @@
 {% block profile_content %}
 <div class="layout-header">
     <div class="layout-header-inner">
-        <span class="header_text">Бухта Кодера Аккаунт</span>
+        <a href="{% url 'index' %} ">
+            <span class="header_text">Бухта Кодера Аккаунт</span>
+        </a>
+
         <div class="user_info">
             {% if request.user.is_authenticated %}
             <span class="user">@{{request.user.username}}</span>

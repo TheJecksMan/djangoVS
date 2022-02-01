@@ -15,7 +15,9 @@
     <div class="layout">
         <div class="layout-header">
             <div class="layout-header-inner">
-                <span class="header_text">Бухта Кодера Аккаунт</span>
+                <a href="{% url 'index' %}">
+                    <span class="header_text">Бухта Кодера Аккаунт</span>
+                </a>
             </div>
         </div>
         <div class="layout_register">
@@ -46,13 +48,13 @@
                     </form>
 
                     <div class="reminder_label">
-                        <a href="reminder"><span class="text_login wrap">Забыли пароль?</span></a>
+                        <a href="{% url 'reminders' %}"><span class="text_login wrap">Забыли пароль?</span></a>
                     </div>
                 </div>
 
                 <div class="layout_register_inner form_register login">
                     Не зарегистрированы?
-                    <a href="register"><span class="text_login">Зарегистрируйтесь</span></a>
+                    <a href="{% url 'register' %}"><span class="text_login">Зарегистрируйтесь</span></a>
                 </div>
             </div>
         </div>
