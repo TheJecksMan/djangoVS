@@ -1,12 +1,9 @@
-from hashlib import new
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .forms import *
 
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-import django.contrib.auth.password_validation as valid
 
 
 @login_required  # redirect form login
@@ -86,7 +83,6 @@ def sing_in(request):  # form authentication and loginin account
         if form.is_valid():
             username = request.POST['username']  # login
             password = request.POST['password']  # password
-            # print(validate.validate_password(password=password, user=username))
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 if request.GET.get('next'):  # redirect if the user is not logged in
